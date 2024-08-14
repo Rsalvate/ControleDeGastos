@@ -1,15 +1,19 @@
-using Ioc.DependencyInjection.Extensions;
+using Api.Helpers;
+using Core.Extensions;
+using IOC.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+var appAssemblies = AppHelpers.Assemblies;
 
-builder.Services.ConfigureServices();
+builder.AddAutoMapper(appAssemblies);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(); // Trocar para extension
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddApplication(appAssemblies);
 
 var app = builder.Build();
 
