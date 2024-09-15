@@ -1,7 +1,7 @@
 ﻿using Domain.Common;
 
 namespace Domain.Users;
-public class User : BaseClass
+public class User : BaseClass<Guid>
 {
     public User(string name,
                 string email,

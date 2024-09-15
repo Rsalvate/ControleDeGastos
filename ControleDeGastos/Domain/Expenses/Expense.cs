@@ -1,23 +1,26 @@
 ﻿using Domain.Categories;
 using Domain.Common;
+using Domain.Users;
 
 namespace Domain.Expenses;
-public class Expense : BaseClass
+public class Expense : BaseClass<Guid>
 {
     public Expense(Guid userId,
                    string title,
                    decimal amount,
-                   DateTime dueData,
-                   Category category)
+                   DateTime dueDate,
+                   int categoryId
+                   )
     {
         UserId = userId;
         Title = title;
-        Amount = amount;
+        DueDate = dueDate;
+        Amount = amount;        
+        CategoryId = categoryId;
         IsPaid = false;
-        Category = category;
+        PaymentDate = null;
     }
-
-    public Guid UserId { get; private set; }
+    
     public string Title { get; private set; }
     public decimal Amount { get; private set; }
     public DateTime DueDate { get; private set; }
@@ -25,7 +28,10 @@ public class Expense : BaseClass
     public bool IsPaid { get; private set; }
 
 
-    public Guid CategoryId { get; private set; }
+    public Guid UserId { get; private set; }
+    public User User { get; private set; }
+
+    public int CategoryId { get; private set; }
     public Category Category { get; private set; }
 
 

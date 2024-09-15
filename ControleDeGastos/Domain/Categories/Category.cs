@@ -1,7 +1,7 @@
 ﻿using Domain.Common;
 
 namespace Domain.Categories;
-public class Category : BaseClass
+public class Category : BaseClass<int>
 {
     public Category(string name, string description)
     {

@@ -1,8 +1,18 @@
 ﻿namespace Domain.Common;
-public class BaseClass
+public class BaseClass<T>
 {
-    public Guid Id { get; set; }
+    public BaseClass()
+    {
+        CreatedAt = DateTime.Now;
+    }
 
-    public DateTime CreatedAt { get; set; }
-    public DateTime? UpdatedAt { get; set; }
+    public T Id { get; set; }
+
+    public DateTime CreatedAt { get; private set; }
+    public DateTime? UpdatedAt { get; private set; }
+
+    public void SetUpdateDate()
+    {
+        UpdatedAt = DateTime.Now;
+    }
 }
