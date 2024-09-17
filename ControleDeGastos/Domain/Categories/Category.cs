@@ -1,4 +1,4 @@
-﻿using Domain.Common;
+﻿using Core.BaseTypes;
 
 namespace Domain.Categories;
 public class Category : BaseClass<int>

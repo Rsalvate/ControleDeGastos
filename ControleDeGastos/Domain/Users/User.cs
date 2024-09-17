@@ -1,4 +1,4 @@
-﻿using Domain.Common;
+﻿using Core.BaseTypes;
 
 namespace Domain.Users;
 public class User : BaseClass<Guid>

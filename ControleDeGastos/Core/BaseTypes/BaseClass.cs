@@ -1,4 +1,4 @@
-﻿namespace Domain.Common;
+﻿namespace Core.BaseTypes;
 public class BaseClass<T>
 {
     public BaseClass()
@@ -10,9 +10,16 @@ public class BaseClass<T>
 
     public DateTime CreatedAt { get; private set; }
     public DateTime? UpdatedAt { get; private set; }
+    public bool IsDeleted { get; private set; } = false;
 
     public void SetUpdateDate()
     {
         UpdatedAt = DateTime.Now;
+    }
+
+    public void SetAsDeleted()
+    {
+        IsDeleted = true;
+        SetUpdateDate();
     }
 }

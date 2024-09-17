@@ -1,5 +1,5 @@
-﻿using Domain.Categories;
-using Domain.Common;
+﻿using Core.BaseTypes;
+using Domain.Categories;
 using Domain.Users;
 
 namespace Domain.Expenses;

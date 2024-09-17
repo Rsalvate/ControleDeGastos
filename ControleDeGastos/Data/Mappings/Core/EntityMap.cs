@@ -1,4 +1,4 @@
-﻿using Domain.Common;
+﻿using Core.BaseTypes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Linq.Expressions;
